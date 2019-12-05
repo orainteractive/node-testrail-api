@@ -99,6 +99,12 @@ TestRail.prototype._callAPI = function (method, url, queryVariables, body, callb
 
 
 
+// ----- Attachments -----
+
+TestRail.prototype.addAttachmentToResult = function (result_id, data, callback) {
+  return this.apiPost('add_attachment_to_result/' + result_id, JSON.stringify(data), callback);
+};
+
 // ----- Cases -----
 
 TestRail.prototype.getCase = function (id, callback) {
